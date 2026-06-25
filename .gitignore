@@ -1,0 +1,10 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Configurações locais de IDE
+.vscode/
+.idea/
+
+# Caso algum dia adicione build com Node.js
+node_modules/

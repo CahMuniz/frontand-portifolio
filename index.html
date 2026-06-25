@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ana Carolina Muniz Soares | Desenvolvedora Java &amp; Analista de Sistemas</title>
+  <meta name="description" content="Portfólio de Ana Carolina Muniz Soares — Analista e Desenvolvedora de Sistemas (Newton Paiva), especialista em Java, Spring Boot e bancos de dados, com guia de campo tecnológico e projetos.">
+
+  <!-- ============================================================
+       FONTES: combinação serifada (Fraunces) para títulos com
+       personalidade + sans (Outfit) para leitura + mono (Space Mono)
+       para tudo que remete a código/terminal.
+  ============================================================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Ícones (redes sociais + glossário técnico) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🦋</text></svg>">
+</head>
+<body>
+
+  <!-- Link de pular para o conteúdo: essencial para acessibilidade via teclado/leitor de tela -->
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <!-- ============================================================
+       CURSOR PERSONALIZADO (borboleta) — o elemento é só visual.
+       Ele é construído e animado pelo js/script.js e é ocultado
+       automaticamente em telas de toque e quando o visitante
+       pede "movimento reduzido" no sistema (acessibilidade).
+  ============================================================= -->
+  <div id="cursor-borboleta" aria-hidden="true">
+    <svg viewBox="0 0 64 64" width="44" height="44">
+      <g>
+        <path class="asa asa-esq-cima" d="M32 30 C20 6, -4 6, 4 26 C9 38, 22 36, 32 30 Z" fill="url(#gradAsa1)"/>
+        <path class="asa asa-esq-baixo" d="M32 32 C22 40, 8 56, 18 58 C28 60, 32 44, 32 32 Z" fill="url(#gradAsa2)"/>
+        <path class="asa asa-dir-cima" d="M32 30 C44 6, 68 6, 60 26 C55 38, 42 36, 32 30 Z" fill="url(#gradAsa1)"/>
+        <path class="asa asa-dir-baixo" d="M32 32 C42 40, 56 56, 46 58 C36 60, 32 44, 32 32 Z" fill="url(#gradAsa2)"/>
+        <ellipse cx="32" cy="31" rx="2.6" ry="9" fill="#3a1d4d"/>
+      </g>
+      <defs>
+        <linearGradient id="gradAsa1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#8B3FE8"/>
+          <stop offset="1" stop-color="#E84FA0"/>
+        </linearGradient>
+        <linearGradient id="gradAsa2" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#C13DD9"/>
+          <stop offset="1" stop-color="#FF8FC0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- ============================================================
+       CABEÇALHO / NAVEGAÇÃO FIXA
+  ============================================================= -->
+  <header class="cabecalho">
+    <nav class="nav-principal" aria-label="Navegação principal">
+      <a href="#home" class="logo">Ana<span>.</span>dev <span class="logo-borboleta">🦋</span></a>
+
+      <button id="botao-menu" class="botao-menu" aria-expanded="false" aria-controls="lista-nav" aria-label="Abrir menu de navegação">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="lista-nav" class="lista-nav">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#sobre">Sobre mim</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#guia">Guia de Campo Tech</a></li>
+        <li><a href="#comentarios">Comentários</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><button id="botao-cursor" class="botao-toggle-cursor" type="button" aria-pressed="true">🦋 Cursor: ligado</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <!-- ============================================================
+         HERO / MARKETING PESSOAL — primeira impressão, headline,
+         resumo profissional e chamadas para ação.
+    ============================================================= -->
+    <section id="home" class="secao-hero">
+      <div class="blob-decorativo blob-1" aria-hidden="true"></div>
+      <div class="blob-decorativo blob-2" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-texto">
+          <p class="eyebrow">Análise &amp; Desenvolvimento de Sistemas · Newton Paiva</p>
+          <h1>Busco transformar o <em>código</em> &nbsp;— em conexão &nbsp;e a tecnologia em algo acessível para todos.</h1>
+          <p class="hero-paragrafo">
+            Sou <strong>Ana Carolina Muniz Soares</strong>, desenvolvedora Java e analista de sistemas.em soluções que sejam acessíveisem soluções que sejam acessíveisem soluções que sejam acessíveisem soluções que sejam acessíveisem soluções que sejam acessíveis
+            Construo aplicações organizadas, sistemas com banco de dados de verdade e, principalmente,
+            acredito que tecnologia só faz sentido quando ela chega até as pessoas — por isso este
+            portfólio também é um guia de estudo aberto para quem está começando.
+          </p>
+
+          <div class="hero-acoes">
+            <a href="#projetos" class="botao botao-primario">Ver meus projetos</a>
+            <a href="#contato" class="botao botao-secundario">Vamos conversar</a>
+          </div>
+
+          <ul class="hero-tags" aria-label="Principais tecnologias">
+            <li>Java</li><li>Spring Boot</li><li>MySQL</li><li>SQL</li><li>OOP</li><li>Power BI</li><li>Scrum</li>
+          </ul>
+        </div>
+
+        <div class="hero-imagem">
+          <!-- Substitua pela sua foto real em assets/img/foto-perfil.jpg -->
+          <div class="moldura-foto">
+            <img src="assets/img/anac.jpg" alt="Foto de Ana Carolina Muniz Soares" onerror="this.src='https://api.dicebear.com/7.x/notionists/svg?seed=AnaCarolina&backgroundColor=f4c2e0,e0c2f4'">
+          </div>
+          <span class="selo-flutuante">Quero flutuar cada vez mais em conhecimento ⛅🌻</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SOBRE MIM — formação, trajetória, soft skills, propósito.
+    ============================================================= -->
+    <section id="sobre" class="secao secao-sobre">
+      <div class="container">
+        <h2><span class="numero-decorativo">Quem</span> sou eu</h2>
+
+        <div class="sobre-grid">
+          <article class="cartao-vidro sobre-bio">
+            <p>
+              Sou formada em <strong>Análise e Desenvolvimento de Sistemas</strong> pela
+              <strong> Newton Paiva</strong>. Durante a graduação, fui <strong>monitora de informática em
+              estágio</strong>, onde ganhei experiência prática com manutenção de máquinas, montagem,
+              limpeza e configuração de equipamentos — além de apoiar colegas e a comunidade no
+              primeiro contato com a tecnologia.
+            </p>
+            <p>
+              Hoje, meu foco é <strong>desenvolvimento back-end em Java</strong> com
+              <strong> Spring Boot</strong> e bancos de dados relacionais (<strong>MySQL</strong>),
+              sem deixar de lado boas práticas de front-end, dados e segurança. Tenho disponibilidade
+              e, sobretudo, vontade genuína de ajudar a comunidade a ter acesso a conhecimento e
+              técnicas de programação — esse é o motivo deste site existir do jeito que ele é.
+            </p>
+            <ul class="lista-valores">
+              <li><i class="fa-solid fa-heart" aria-hidden="true"></i> Ensino acessível para todos os públicos</li>
+              <li><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Ética, privacidade e segurança em primeiro lugar</li>
+              <li><i class="fa-solid fa-people-group" aria-hidden="true"></i> Comunidade antes de protagonismo individual</li>
+            </ul>
+          </article>
+
+          <aside class="cartao-vidro sobre-info">
+            <h3>Ficha rápida</h3>
+            <dl class="ficha">
+              <div><dt>Nome</dt><dd>Ana Carolina Muniz Soares</dd></div>
+              <div><dt>Formação</dt><dd>Análise e Desenvolvimento de Sistemas — Newton Paiva</dd></div>
+              <div><dt>Experiência</dt><dd>Estágio como Monitora de Informática (manutenção e suporte de máquinas)</dd></div>
+              <div><dt>Stack principal</dt><dd>Java · Spring Boot · MySQL · SQL · IntelliJ · VSCode</dd></div>
+              <div><dt>Também estudo</dt><dd>Power BI, IA aplicada, metodologias ágeis, cibersegurança</dd></div>
+              <div><dt>Disponibilidade</dt><dd>Aberta a oportunidades e parcerias</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJETOS — vitrine de projetos (cartões "espécimen").
+    ============================================================= -->
+    <section id="projetos" class="secao secao-projetos">
+      <div class="container">
+        <h2><span class="numero-decorativo">Meus</span> projetos</h2>
+        <p class="subtitulo-secao">
+          Uma coleção de projetos práticos — assim como este portfólio, todos pensados para
+          unir código limpo, propósito real e aprendizado contínuo.
+        </p>
+
+        <div class="grade-projetos">
+
+          <article class="cartao-projeto">
+            <div class="etiqueta-especie">Projeto 01</div>
+            <div class="icone-projeto"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
+            <h3>Portfólio Full Stack (este site)</h3>
+            <p>
+              Front-end responsivo em HTML/CSS/JS com cursor animado, guia técnica e área de
+              comentários com CRUD; back-end em <strong>Java + Spring Boot</strong> conectado a
+              <strong> MySQL</strong>, hospedado de forma desacoplada e resiliente.
+            </p>
+            <ul class="tags-projeto">
+              <li>Java</li><li>Spring Boot</li><li>MySQL</li><li>REST API</li><li>HTML/CSS/JS</li>
+            </ul>
+            <div class="links-projeto">
+              <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Código-fonte</a>
+              <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Demonstração</a>
+            </div>
+          </article>
+
+          <article class="cartao-projeto">
+            <div class="etiqueta-especie">Projeto 02</div>
+            <div class="icone-projeto"><i class="fa-solid fa-database" aria-hidden="true"></i></div>
+            <h3>Sistema de Criação de API e busca em Rect Native Expo</h3>
+            <p>
+              Aplicação de cadastro completo e busca de usuários usando arquitetura em
+              camadas (Controller → Service → Repository), validações de dados e persistência em
+              <strong>Mocky.io</strong> API JSON.
+            </p>
+            <ul class="tags-projeto">
+              <li>Java</li><li>Spring Data JPA</li><li>MySQL</li><li>Maven</li><li>POO</li>
+            </ul>
+            <div class="links-projeto">
+              <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Código-fonte</a>
+            </div>
+          </article>
+
+          <article class="cartao-projeto">
+            <div class="etiqueta-especie">Projeto 03</div>
+            <div class="icone-projeto"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i></div>
+            <h3>Cardapio Hanburgueria</h3>
+            <p>
+               O sistema de hamburgueria foi desenvolvido para dispositivos móveis 
+               utilizando React Native e Expo Start, permitindo aos usuários 
+               visualizar o cardápio, selecionar hambúrgueres, adicionar itens ao 
+               carrinho de intuitiva.A aplicação possui uma interface de fácil acesso
+               proporcionando uma boa experiência em smartphones. O uso do 
+               Expo facilitou o processo de desenvolvimento, testes e execução 
+               do aplicativo em diferentes plataformas, contribuindo para maior 
+               produtividade e manutenção do projeto.
+            </p>
+            <ul class="tags-projeto">
+              <li>NPX</li><li>SQLite</li><li>Typescript</li>
+            </ul>
+            <div class="links-projeto">
+              <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Ver relatório</a>
+            </div>
+          </article>
+
+          <article class="cartao-projeto cartao-projeto-extra">
+            <div class="icone-projeto"><i class="fa-solid fa-plus" aria-hidden="true"></i></div>
+            <h3>Seu próximo projeto aqui</h3>
+            <p>Este espaço foi feito para crescer — ainda em desenvolvimento.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         GUIA DE CAMPO TECH — glossário ilustrado de tecnologia.
+    ============================================================= -->
+    <section id="guia" class="secao secao-guia">
+      <div class="container">
+        <h2><span class="numero-decorativo">Guia</span> Um pouquinho dos principais conceitos</h2>
+        <p class="subtitulo-secao">
+          Um pequeno "guia de campo" de tecnologia — como se cada termo fosse uma espécie catalogada.
+          Filtre por categoria e clique em "saiba mais" para uma fonte confiável sobre o assunto.
+        </p>
+
+        <!-- Filtros por categoria, gerados/controlados também via JS -->
+        <div class="filtros-guia" role="tablist" aria-label="Filtrar termos por categoria">
+          <button class="filtro ativo" data-filtro="todos" role="tab" aria-selected="true">Todos</button>
+          <button class="filtro" data-filtro="linguagens" role="tab" aria-selected="false">Linguagens</button>
+          <button class="filtro" data-filtro="java" role="tab" aria-selected="false">Ecossistema Java</button>
+          <button class="filtro" data-filtro="web" role="tab" aria-selected="false">Web &amp; Dados</button>
+          <button class="filtro" data-filtro="arquitetura" role="tab" aria-selected="false">Arquitetura &amp; API</button>
+          <button class="filtro" data-filtro="agil" role="tab" aria-selected="false">Metodologias Ágeis</button>
+          <button class="filtro" data-filtro="qualidade" role="tab" aria-selected="false">Qualidade &amp; Segurança</button>
+          <button class="filtro" data-filtro="futuro" role="tab" aria-selected="false">IA &amp; Futuro</button>
+        </div>
+
+        <!-- A grade de cartões é populada estaticamente aqui (funciona sem JS)
+             e o script.js apenas controla a exibição/ocultação por categoria. -->
+        <div class="grade-guia" id="grade-guia">
+
+          <!-- ---------- LINGUAGENS ---------- -->
+          <article class="cartao-especimen" data-categoria="linguagens">
+            <i class="fa-solid fa-code icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Linguagens</span>
+            <h3>Linguagens de Programação</h3>
+            <p>Conjuntos formais de regras usados para escrever instruções que um computador consegue interpretar e executar, traduzindo lógica humana em ações de máquina.</p>
+            <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="linguagens java">
+            <i class="fa-brands fa-java icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Linguagens</span>
+            <h3>Java</h3>
+            <p>Linguagem orientada a objetos, fortemente tipada e multiplataforma, muito usada em sistemas corporativos, back-end de aplicações web e APIs.</p>
+            <a href="https://docs.oracle.com/javase/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="linguagens web">
+            <i class="fa-brands fa-css3-alt icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Linguagens</span>
+            <h3>CSS</h3>
+            <p>Linguagem de estilo responsável pela aparência das páginas web: cores, espaçamentos, layout e animações, como tudo que você está vendo neste site.</p>
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="linguagens web">
+            <i class="fa-brands fa-js icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Linguagens</span>
+            <h3>JavaScript</h3>
+            <p>Linguagem que dá interatividade às páginas web — é ela quem move a borboleta do seu cursor e controla os comentários desta página.</p>
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="linguagens web">
+            <i class="fa-solid fa-database icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Linguagens</span>
+            <h3>SQL</h3>
+            <p>Linguagem usada para consultar, inserir, atualizar e apagar dados em bancos de dados relacionais, como o MySQL usado no back-end deste portfólio.</p>
+            <a href="https://www.mysql.com/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="linguagens">
+            <i class="fa-solid fa-cubes icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Linguagens</span>
+            <h3>Orientação a Objetos (POO)</h3>
+            <p>Paradigma de programação que organiza o código em "objetos" com atributos e comportamentos, baseado em quatro pilares: encapsulamento, herança, polimorfismo e abstração.</p>
+            <a href="https://docs.oracle.com/javase/tutorial/java/concepts/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <!-- ---------- ECOSSISTEMA JAVA ---------- -->
+          <article class="cartao-especimen" data-categoria="java">
+            <i class="fa-solid fa-feather-pointed icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Ecossistema Java</span>
+            <h3>IntelliJ IDEA</h3>
+            <p>Ambiente de desenvolvimento (IDE) da JetBrains muito usado para programar em Java, com autocompletar inteligente, depuração e integração com frameworks como o Spring.</p>
+            <a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="java arquitetura">
+            <i class="fa-solid fa-leaf icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Ecossistema Java</span>
+            <h3>Spring Boot</h3>
+            <p>Framework Java que simplifica a criação de aplicações e APIs, cuidando de configurações repetitivas e permitindo focar nas regras de negócio do sistema.</p>
+            <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="java">
+            <i class="fa-solid fa-layer-group icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Ecossistema Java</span>
+            <h3>Maven</h3>
+            <p>Ferramenta de gerenciamento de dependências e automação de build para projetos Java — ela baixa as bibliotecas que o projeto precisa e organiza a compilação.</p>
+            <a href="https://maven.apache.org/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="java">
+            <i class="fa-solid fa-code-branch icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Ecossistema Java</span>
+            <h3>VS Code</h3>
+            <p>Editor de código leve e extensível da Microsoft, usado para escrever, testar e versionar projetos em praticamente qualquer linguagem — inclusive este site.</p>
+            <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <!-- ---------- WEB & DADOS ---------- -->
+          <article class="cartao-especimen" data-categoria="web arquitetura">
+            <i class="fa-solid fa-display icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Web &amp; Dados</span>
+            <h3>Front-end</h3>
+            <p>Camada de um sistema com a qual a pessoa usuária interage diretamente: telas, botões, formulários e tudo o que aparece no navegador ou aplicativo.</p>
+            <a href="https://developer.mozilla.org/pt-BR/docs/Learn" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="web arquitetura">
+            <i class="fa-solid fa-server icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Web &amp; Dados</span>
+            <h3>Back-end</h3>
+            <p>Camada responsável pela lógica de negócio, regras, segurança e comunicação com o banco de dados — geralmente invisível para quem usa o sistema.</p>
+            <a href="https://www.redhat.com/pt-br/topics/cloud-native-apps/backend-vs-frontend" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="web">
+            <i class="fa-solid fa-table icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Web &amp; Dados</span>
+            <h3>Dados</h3>
+            <p>Conjunto de informações — estruturadas (como tabelas) ou não estruturadas (como textos e imagens) — que sistemas coletam, armazenam e transformam em valor.</p>
+            <a href="https://www.ibm.com/topics/big-data" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="web futuro">
+            <i class="fa-solid fa-chart-pie icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Web &amp; Dados</span>
+            <h3>Power BI</h3>
+            <p>Ferramenta da Microsoft para conectar, tratar e visualizar dados em painéis interativos, ajudando empresas a tomar decisões baseadas em informação real.</p>
+            <a href="https://powerbi.microsoft.com/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <!-- ---------- ARQUITETURA & API ---------- -->
+          <article class="cartao-especimen" data-categoria="arquitetura">
+            <i class="fa-solid fa-gears icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Arquitetura &amp; API</span>
+            <h3>Como um sistema funciona</h3>
+            <p>De forma simples: o código-fonte escrito por uma pessoa desenvolvedora é traduzido (compilado ou interpretado) para instruções de máquina, que são executadas em sequência, lidas entradas e gerando saídas.</p>
+            <a href="https://www.ibm.com/topics/software" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="arquitetura">
+            <i class="fa-solid fa-plug icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Arquitetura &amp; API</span>
+            <h3>O que é uma API</h3>
+            <p>API (Interface de Programação de Aplicações) é um "contrato" que permite que dois sistemas diferentes troquem informações de forma padronizada, sem que um precise conhecer os detalhes internos do outro.</p>
+            <a href="https://aws.amazon.com/what-is/api/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="arquitetura java">
+            <i class="fa-solid fa-hammer icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Arquitetura &amp; API</span>
+            <h3>Criação de uma API</h3>
+            <p>Criar uma API envolve definir endpoints (URLs), métodos HTTP (GET, POST, PUT, DELETE) e regras de negócio — no back-end deste site, isso é feito com controllers do Spring Boot.</p>
+            <a href="https://spring.io/guides/gs/rest-service" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="arquitetura futuro">
+            <i class="fa-solid fa-diagram-project icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Arquitetura &amp; API</span>
+            <h3>Integração de Sistemas</h3>
+            <p>Processo de conectar diferentes sistemas, plataformas ou serviços (muitas vezes via APIs) para que troquem dados e funcionem de forma coordenada.</p>
+            <a href="https://www.redhat.com/pt-br/topics/integration" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="arquitetura">
+            <i class="fa-solid fa-shapes icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Arquitetura &amp; API</span>
+            <h3>Microsserviços</h3>
+            <p>Estilo de arquitetura que divide um sistema grande em pequenos serviços independentes, cada um com sua própria responsabilidade, que se comunicam entre si — geralmente via API.</p>
+            <a href="https://aws.amazon.com/microservices/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <!-- ---------- METODOLOGIAS ÁGEIS ---------- -->
+          <article class="cartao-especimen" data-categoria="agil">
+            <i class="fa-solid fa-arrows-spin icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Metodologias Ágeis</span>
+            <h3>Metodologias Ágeis</h3>
+            <p>Conjunto de práticas de gestão de projetos que prioriza entregas curtas, colaboração constante e adaptação rápida a mudanças, em vez de planejamentos rígidos e longos.</p>
+            <a href="https://agilemanifesto.org/iso/ptbr/manifesto.html" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="agil">
+            <i class="fa-solid fa-flag-checkered icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Metodologias Ágeis</span>
+            <h3>Scrum</h3>
+            <p>Framework ágil organizado em ciclos chamados sprints, com papéis definidos (Product Owner, Scrum Master, Time de Desenvolvimento) e cerimônias como daily, planning e retrospectiva.</p>
+            <a href="https://scrumguides.org/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="agil">
+            <i class="fa-solid fa-table-columns icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Metodologias Ágeis</span>
+            <h3>Kanban</h3>
+            <p>Método visual de gestão de fluxo de trabalho, organizado em colunas (ex.: "a fazer", "fazendo", "feito"), que ajuda equipes a visualizar e limitar o trabalho em andamento.</p>
+            <a href="https://www.atlassian.com/br/agile/kanban" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <!-- ---------- QUALIDADE & SEGURANÇA ---------- -->
+          <article class="cartao-especimen" data-categoria="qualidade">
+            <i class="fa-solid fa-magnifying-glass icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Qualidade &amp; Segurança</span>
+            <h3>QA (Quality Assurance)</h3>
+            <p>Área responsável por garantir a qualidade de um software, planejando e executando testes para encontrar falhas antes que cheguem até quem usa o sistema.</p>
+            <a href="https://www.istqb.org/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="qualidade">
+            <i class="fa-solid fa-box icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Qualidade &amp; Segurança</span>
+            <h3>Teste de Caixa-Preta</h3>
+            <p>Tipo de teste que avalia o comportamento do sistema apenas pelas entradas e saídas, sem olhar o código interno — simula o ponto de vista de quem usa o sistema.</p>
+            <a href="https://www.istqb.org/glossary/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="qualidade">
+            <i class="fa-solid fa-box-open icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Qualidade &amp; Segurança</span>
+            <h3>Teste de Caixa-Branca</h3>
+            <p>Tipo de teste que examina a lógica interna do código (linhas, condições, caminhos), normalmente feito por quem desenvolve, garantindo cobertura técnica do sistema.</p>
+            <a href="https://www.istqb.org/glossary/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="qualidade">
+            <i class="fa-solid fa-clipboard-check icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Qualidade &amp; Segurança</span>
+            <h3>O que um QA precisa saber</h3>
+            <p>Pensamento lógico e analítico, conhecimento de técnicas de teste, noções de automação, boa comunicação e muita atenção a detalhes para antecipar problemas reais.</p>
+            <a href="https://www.istqb.org/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="cartao-especimen" data-categoria="qualidade futuro">
+            <i class="fa-solid fa-shield-halved icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">Qualidade &amp; Segurança</span>
+            <h3>Cibersegurança</h3>
+            <p>Conjunto de práticas, ferramentas e políticas usadas para proteger sistemas, redes e dados contra acessos indevidos, vazamentos e outros ataques digitais.</p>
+            <a href="https://owasp.org/" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <!-- ---------- IA & FUTURO ---------- -->
+          <article class="cartao-especimen" data-categoria="futuro">
+            <i class="fa-solid fa-brain icone-especimen" aria-hidden="true"></i>
+            <span class="rotulo-categoria">IA &amp; Futuro</span>
+            <h3>Aprendizado de IA / Machine Learning</h3>
+            <p>Área da inteligência artificial em que sistemas aprendem padrões a partir de dados, em vez de seguir apenas regras fixas escritas manualmente, melhorando com mais exemplos.</p>
+            <a href="https://www.ibm.com/topics/machine-learning" target="_blank" rel="noopener">Saiba mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COMENTÁRIOS — guia com CRUD (criar, editar, apagar).
+    ============================================================= -->
+    <section id="comentarios" class="secao secao-comentarios">
+      <div class="container">
+        <h2><span class="numero-decorativo">Deixe</span> seu comentário</h2>
+        <p class="subtitulo-secao">
+          Achou este guia útil? Tem uma dúvida ou sugestão? Os comentários ficam salvos no seu
+          navegador (ainda em processo de sincronização no banco de dados). Você pode editar ou apagar qualquer comentário seu a qualquer momento.
+        </p>
+
+        <form id="form-comentario" class="form-comentario cartao-vidro" novalidate>
+          <input type="hidden" id="comentario-id" value="">
+
+          <div class="campo">
+            <label for="comentario-nome">Seu nome</label>
+            <input type="text" id="comentario-nome" name="nome" maxlength="60" required placeholder="Como você quer ser chamada(o)?">
+          </div>
+
+          <div class="campo">
+            <label for="comentario-texto">Comentário</label>
+            <textarea id="comentario-texto" name="texto" maxlength="500" rows="3" required placeholder="Escreva aqui sua mensagem (até 500 caracteres)..."></textarea>
+          </div>
+
+          <p class="aviso-seguranca"><i class="fa-solid fa-lock" aria-hidden="true"></i> Não envie dados sensíveis (senhas, documentos, dados bancários) nos comentários.</p>
+
+          <div class="acoes-form">
+            <button type="submit" id="botao-enviar-comentario" class="botao botao-primario">
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Publicar comentário
+            </button>
+            <button type="button" id="botao-cancelar-edicao" class="botao botao-secundario" hidden>Cancelar edição</button>
+          </div>
+        </form>
+
+        <ul id="lista-comentarios" class="lista-comentarios" aria-live="polite">
+          <!-- Comentários são renderizados dinamicamente pelo js/script.js -->
+        </ul>
+        <p id="mensagem-sem-comentarios" class="mensagem-vazia">Seja a primeira pessoa a comentar 🦋</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ÉTICA, PRIVACIDADE E ACESSIBILIDADE
+    ============================================================= -->
+    <section class="secao secao-etica">
+      <div class="container etica-grid">
+        <article class="cartao-vidro">
+          <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+          <h3>Ética &amp; privacidade</h3>
+          <p>Os comentários são salvos localmente no seu navegador (localStorage) por padrão. Nenhum dado é vendido ou compartilhado com terceiros. Evite publicar informações pessoais sensíveis.</p>
+        </article>
+        <article class="cartao-vidro">
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <h3>Segurança</h3>
+          <p>O back-end usa parâmetros preparados (JPA/Hibernate) contra SQL Injection, validação de entradas e CORS configurado — seguindo boas práticas como as recomendadas pela OWASP.</p>
+        </article>
+        <article class="cartao-vidro">
+          <i class="fa-solid fa-universal-access" aria-hidden="true"></i>
+          <h3>Acessibilidade</h3>
+          <p>HTML semântico, textos alternativos, navegação por teclado, contraste adequado e respeito à preferência de "movimento reduzido" do seu sistema operacional.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTATO / REDES SOCIAIS
+    ============================================================= -->
+    <section id="contato" class="secao secao-contato">
+      <div class="container">
+        <h2><span class="numero-decorativo">Vamos</span> nos conectar?</h2>
+        <p class="subtitulo-secao">Estou disponível para oportunidades, parcerias e — sempre — para ajudar quem está aprendendo a programar.</p>
+
+        <div class="grade-contato">
+          <a class="cartao-contato" href="mailto:anamunizcarolina@gmail.com" target="_blank" rel="noopener">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i><span>E-mail</span>
+          </a>
+          <a class="cartao-contato" href="https://github.com/CahMuniz" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span>
+          </a>
+          <a class="cartao-contato" href="https://www.linkedin.com/in/ana-carolina-muniz-soares-939669279/?locale=pt" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
+          </a>
+          <a class="cartao-contato" href="https://www.instagram.com/carolzinhamuso/" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i><span>Instagram</span>
+          </a>
+          <a class="cartao-contato" href="https://wa.me/5531990602966" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span>
+          </a>
+        </div>
+        <p class="dica-edicao"><i class="fa-solid fa-pen" aria-hidden="true"></i> Toque nos links e seja redirecionado <code>Cah Muniz</code>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-grid">
+      <p>༼ つ ◕_◕ ༽つ <span id="ano-atual"></span> Ana Carolina Muniz Soares — feito durante ao longo de 2 anos entre diciplinas é muito código, mas, está valendo a pena.</p>
+      <p class="rodape-pequeno">Front-end estático (HTML/CSS/JS) hospedado na Vercel via GitHub · Back-end Java/Spring Boot + MySQL.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

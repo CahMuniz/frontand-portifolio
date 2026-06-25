@@ -1,0 +1,611 @@
+/* ============================================================
+   PORTFÓLIO — ANA CAROLINA MUNIZ SOARES
+   Tema: "Guia de Campo" — jardim digital + borboleta + código.
+   ------------------------------------------------------------
+   Este arquivo está organizado em blocos, na ordem em que
+   aparecem no index.html, para facilitar a manutenção:
+   1) Variáveis (tokens de design)
+   2) Reset básico e tipografia
+   3) Acessibilidade (skip-link, foco, reduced motion)
+   4) Cursor borboleta
+   5) Cabeçalho / navegação
+   6) Hero
+   7) Sobre mim
+   8) Projetos
+   9) Guia de campo (glossário)
+   10) Comentários
+   11) Ética / contato / rodapé
+   12) Responsivo (mobile)
+============================================================= */
+
+/* ---------- 1) VARIÁVEIS (TOKENS DE DESIGN) ---------- */
+:root{
+  /* Paleta nomeada */
+  --cor-tinta:        #2D1B33; /* texto principal — quase preto arroxeado, alto contraste */
+  --cor-violeta:       #6C2BD9; /* cor de marca, títulos e ações primárias */
+  --cor-violeta-escura:#4A1942; /* fundo escuro (rodapé, contraste) */
+  --cor-magenta:       #D6336C; /* acento quente, links e detalhes */
+  --cor-petala:        #FCE7F3; /* fundo rosa muito claro */
+  --cor-creme:         #FBF7FB; /* fundo principal, quase branco */
+  --cor-dourado:       #F4C95D; /* acento pontual (selo, destaque) */
+  --cor-borda:         rgba(108, 43, 217, 0.18);
+
+  /* Tipografia */
+  --fonte-display: "Fraunces", "Georgia", serif;
+  --fonte-corpo:   "Outfit", system-ui, sans-serif;
+  --fonte-mono:    "Space Mono", "Courier New", monospace;
+
+  /* Espaçamento e formas */
+  --raio: 22px;
+  --raio-pequeno: 12px;
+  --sombra: 0 18px 40px -18px rgba(108, 43, 217, 0.35);
+  --largura-maxima: 1180px;
+
+  --duracao-rapida: 180ms;
+}
+
+/* ---------- 2) RESET BÁSICO E TIPOGRAFIA ---------- */
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--cor-creme);
+  color: var(--cor-tinta);
+  font-family: var(--fonte-corpo);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img{ max-width: 100%; display: block; }
+
+h1, h2, h3{
+  font-family: var(--fonte-display);
+  color: var(--cor-violeta-escura);
+  line-height: 1.15;
+  margin: 0 0 .6em;
+}
+
+h1{ font-size: clamp(2.1rem, 4.4vw, 3.4rem); font-weight: 600; }
+h2{ font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 600; }
+h3{ font-size: 1.25rem; font-weight: 600; }
+
+p{ margin: 0 0 1em; }
+
+a{ color: var(--cor-magenta); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+.container{
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.secao{ padding: 96px 0; position: relative; }
+.secao + .secao{ border-top: 1px solid var(--cor-borda); }
+
+.numero-decorativo{
+  font-family: var(--fonte-mono);
+  font-size: .6em;
+  color: var(--cor-magenta);
+  display: block;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.subtitulo-secao{
+  max-width: 640px;
+  color: #5b4a63;
+  margin-bottom: 40px;
+}
+
+.eyebrow{
+  font-family: var(--fonte-mono);
+  font-size: .85rem;
+  color: var(--cor-magenta);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 12px;
+}
+
+.cartao-vidro{
+  background: rgba(255,255,255,.7);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 32px;
+  backdrop-filter: blur(6px);
+  box-shadow: var(--sombra);
+}
+
+/* Botões */
+.botao{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: .95rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform var(--duracao-rapida) ease, box-shadow var(--duracao-rapida) ease;
+}
+.botao:hover{ transform: translateY(-2px); text-decoration: none; }
+.botao-primario{
+  background: linear-gradient(135deg, var(--cor-violeta), var(--cor-magenta));
+  color: #fff;
+  box-shadow: 0 10px 24px -8px rgba(214,51,108,.55);
+}
+.botao-secundario{
+  background: transparent;
+  color: var(--cor-violeta-escura);
+  border-color: var(--cor-violeta);
+}
+.botao-secundario:hover{ background: var(--cor-petala); }
+
+/* ---------- 3) ACESSIBILIDADE ---------- */
+.skip-link{
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--cor-violeta-escura);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 0 0 10px 0;
+  z-index: 9999;
+}
+.skip-link:focus{ left: 0; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+  outline: 3px solid var(--cor-magenta);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Quem prefere menos movimento não vê a borboleta nem animações longas */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  #cursor-borboleta{ display: none !important; }
+  *{ animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}
+
+/* ---------- 4) CURSOR BORBOLETA ---------- */
+/* O cursor padrão do sistema some e a div abaixo, controlada pelo
+   script.js (que lê a posição do mouse), passa a "voar" pela tela. */
+body.cursor-borboleta-ativo, body.cursor-borboleta-ativo *{
+  cursor: none;
+}
+
+#cursor-borboleta{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  transition: opacity .2s ease;
+}
+#cursor-borboleta.escondido{ opacity: 0; }
+
+/* Batida de asas: anima a escala horizontal das asas, simulando o voo */
+.asa{ transform-origin: 32px 31px; animation: bater-asas 0.42s ease-in-out infinite; }
+.asa-esq-cima, .asa-esq-baixo{ animation-name: bater-asa-esquerda; }
+.asa-dir-cima, .asa-dir-baixo{ animation-name: bater-asa-direita; }
+
+@keyframes bater-asa-esquerda{
+  0%, 100%{ transform: scaleX(1); }
+  50%{ transform: scaleX(.45); }
+}
+@keyframes bater-asa-direita{
+  0%, 100%{ transform: scaleX(1); }
+  50%{ transform: scaleX(.45); }
+}
+
+/* Em telas de toque (sem mouse de precisão) o cursor customizado é inútil
+   e prejudica a usabilidade — então ele é ocultado e o padrão volta. */
+@media (hover: none), (pointer: coarse){
+  #cursor-borboleta{ display: none; }
+  body.cursor-borboleta-ativo, body.cursor-borboleta-ativo *{ cursor: auto; }
+}
+
+/* ---------- 5) CABEÇALHO / NAVEGAÇÃO ---------- */
+.cabecalho{
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  background: rgba(251, 247, 251, .85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.nav-principal{
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo{
+  font-family: var(--fonte-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--cor-violeta-escura);
+}
+.logo span{ color: var(--cor-magenta); }
+.logo:hover{ text-decoration: none; }
+
+.lista-nav{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.lista-nav a{
+  color: var(--cor-tinta);
+  font-weight: 500;
+  font-size: .95rem;
+}
+.lista-nav a:hover{ color: var(--cor-magenta); text-decoration: none; }
+
+.botao-toggle-cursor{
+  font-family: var(--fonte-mono);
+  font-size: .78rem;
+  background: var(--cor-petala);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-violeta-escura);
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.botao-menu{
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.botao-menu span{ width: 24px; height: 2px; background: var(--cor-violeta-escura); border-radius: 2px; }
+
+/* ---------- 6) HERO ---------- */
+.secao-hero{
+  padding: 80px 0 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blob-decorativo{
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: .35;
+  z-index: 0;
+}
+.blob-1{ width: 380px; height: 380px; background: var(--cor-violeta); top: -120px; right: -100px; }
+.blob-2{ width: 300px; height: 300px; background: var(--cor-magenta); bottom: -100px; left: -80px; }
+
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-paragrafo{ max-width: 540px; color: #4a3a50; }
+
+.hero-acoes{ display: flex; gap: 16px; flex-wrap: wrap; margin: 28px 0 24px; }
+
+.hero-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hero-tags li{
+  font-family: var(--fonte-mono);
+  font-size: .78rem;
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--cor-violeta-escura);
+}
+
+.hero-imagem{ position: relative; display: flex; justify-content: center; }
+.moldura-foto{
+  width: min(320px, 80%);
+  aspect-ratio: 1 / 1;
+  border-radius: 50% 50% 46% 54% / 54% 46% 54% 46%;
+  overflow: hidden;
+  border: 6px solid #fff;
+  box-shadow: var(--sombra);
+  background: linear-gradient(135deg, var(--cor-petala), #fff);
+}
+.moldura-foto img{ width: 100%; height: 100%; object-fit: cover; }
+
+.selo-flutuante{
+  position: absolute;
+  bottom: 6%;
+  right: 4%;
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: .8rem;
+  font-weight: 600;
+  box-shadow: var(--sombra);
+  animation: flutuar 3.2s ease-in-out infinite;
+}
+@keyframes flutuar{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-8px); }
+}
+
+/* ---------- 7) SOBRE MIM ---------- */
+.sobre-grid{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.lista-valores{ list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; }
+.lista-valores i{ color: var(--cor-magenta); margin-right: 8px; }
+
+.ficha{ margin: 0; }
+.ficha div{ padding: 10px 0; border-bottom: 1px dashed var(--cor-borda); }
+.ficha div:last-child{ border-bottom: none; }
+.ficha dt{ font-family: var(--fonte-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--cor-magenta); }
+.ficha dd{ margin: 4px 0 0; font-weight: 500; }
+
+/* ---------- 8) PROJETOS ---------- */
+.grade-projetos{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.cartao-projeto{
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 28px;
+  transition: transform var(--duracao-rapida) ease, box-shadow var(--duracao-rapida) ease;
+}
+.cartao-projeto:hover{ transform: translateY(-6px); box-shadow: var(--sombra); }
+
+.etiqueta-especie{
+  font-family: var(--fonte-mono);
+  font-size: .7rem;
+  color: var(--cor-magenta);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 10px;
+}
+
+.icone-projeto{
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--cor-petala), #fff);
+  color: var(--cor-violeta);
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+.tags-projeto{ list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 14px 0; }
+.tags-projeto li{
+  font-size: .72rem;
+  font-family: var(--fonte-mono);
+  background: var(--cor-petala);
+  color: var(--cor-violeta-escura);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.links-projeto{ display: flex; gap: 16px; margin-top: 12px; font-weight: 600; font-size: .9rem; }
+
+.cartao-projeto-extra{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-style: dashed;
+  color: #8b7a91;
+}
+
+/* ---------- 9) GUIA DE CAMPO (GLOSSÁRIO) ---------- */
+.filtros-guia{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.filtro{
+  font-family: var(--fonte-mono);
+  font-size: .82rem;
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-violeta-escura);
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background var(--duracao-rapida) ease, color var(--duracao-rapida) ease;
+}
+.filtro:hover{ background: var(--cor-petala); }
+.filtro.ativo{
+  background: linear-gradient(135deg, var(--cor-violeta), var(--cor-magenta));
+  color: #fff;
+  border-color: transparent;
+}
+
+.grade-guia{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.cartao-especimen{
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  padding: 22px;
+  position: relative;
+  transition: transform var(--duracao-rapida) ease;
+}
+.cartao-especimen:hover{ transform: translateY(-4px); }
+.cartao-especimen.oculto{ display: none; }
+
+.icone-especimen{ font-size: 1.6rem; color: var(--cor-violeta); margin-bottom: 10px; display: block; }
+
+.rotulo-categoria{
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-family: var(--fonte-mono);
+  font-size: .62rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--cor-magenta);
+  background: var(--cor-petala);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.cartao-especimen h3{ font-size: 1.05rem; padding-right: 70px; }
+.cartao-especimen p{ font-size: .92rem; color: #5b4a63; }
+.cartao-especimen a{ font-weight: 600; font-size: .85rem; white-space: nowrap; }
+
+/* ---------- 10) COMENTÁRIOS ---------- */
+.form-comentario{ display: grid; gap: 18px; margin-bottom: 36px; }
+.campo{ display: grid; gap: 6px; }
+.campo label{ font-weight: 600; font-size: .9rem; }
+.campo input, .campo textarea{
+  font-family: var(--fonte-corpo);
+  font-size: .96rem;
+  padding: 12px 14px;
+  border-radius: var(--raio-pequeno);
+  border: 1.5px solid var(--cor-borda);
+  background: #fff;
+  resize: vertical;
+}
+.campo input:focus, .campo textarea:focus{ border-color: var(--cor-violeta); }
+
+.aviso-seguranca{ font-size: .8rem; color: #7a6680; margin: 0; }
+.acoes-form{ display: flex; gap: 14px; flex-wrap: wrap; }
+
+.lista-comentarios{ list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+
+.item-comentario{
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  padding: 18px 20px;
+}
+.cabecalho-comentario{ display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.cabecalho-comentario strong{ color: var(--cor-violeta-escura); }
+.data-comentario{ font-family: var(--fonte-mono); font-size: .72rem; color: #9a8aa0; }
+.texto-comentario{ margin: 10px 0 12px; }
+.acoes-comentario{ display: flex; gap: 14px; }
+.acoes-comentario button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--cor-violeta);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+}
+.acoes-comentario button.apagar{ color: var(--cor-magenta); }
+.acoes-comentario button:hover{ text-decoration: underline; }
+
+.mensagem-vazia{ text-align: center; color: #9a8aa0; padding: 20px 0 0; }
+.mensagem-vazia.escondida{ display: none; }
+
+/* ---------- 11) ÉTICA / CONTATO / RODAPÉ ---------- */
+.etica-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.etica-grid .cartao-vidro i{ font-size: 1.5rem; color: var(--cor-violeta); margin-bottom: 10px; display: block; }
+.etica-grid .cartao-vidro p{ font-size: .92rem; color: #5b4a63; margin: 0; }
+
+.grade-contato{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+.cartao-contato{
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--cor-violeta-escura);
+  transition: transform var(--duracao-rapida) ease, color var(--duracao-rapida) ease;
+}
+.cartao-contato i{ font-size: 1.8rem; color: var(--cor-violeta); }
+.cartao-contato:hover{ transform: translateY(-4px); color: var(--cor-magenta); text-decoration: none; }
+.cartao-contato:hover i{ color: var(--cor-magenta); }
+
+.dica-edicao{ margin-top: 24px; font-size: .82rem; color: #9a8aa0; }
+.dica-edicao code{ background: var(--cor-petala); padding: 2px 6px; border-radius: 6px; }
+
+.rodape{
+  background: var(--cor-violeta-escura);
+  color: #f1e6f4;
+  padding: 36px 0;
+  text-align: center;
+}
+.rodape a{ color: #f4c2e0; }
+.rodape-pequeno{ font-size: .8rem; opacity: .7; margin: 4px 0 0; }
+
+/* ---------- 12) RESPONSIVO ---------- */
+@media (max-width: 880px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero-imagem{ order: -1; }
+  .sobre-grid{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px){
+  .botao-menu{ display: flex; }
+  .lista-nav{
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 14px;
+    padding: 18px 0 6px;
+  }
+  .lista-nav.aberta{ display: flex; }
+  .secao{ padding: 64px 0; }
+}
