@@ -10,13 +10,10 @@
      5) CRUD de comentários (criar, ler, editar, apagar)
      6) Pequenos detalhes (ano no rodapé)
 
-   IMPORTANTE: nenhuma dependência externa é necessária — tudo
-   aqui é JavaScript puro ("vanilla"), para funcionar em qualquer
-   hospedagem estática (GitHub Pages, Vercel, etc.).
 ============================================================= */
 
 /* ---------- 1) CONFIGURAÇÃO ---------- */
-/*
+/* Explicação de funcionamento e os textes e tnetativas para deixar o mais completo possivel
  * Se você publicar o back-end Java/Spring Boot (pasta /backend) em um
  * serviço que aceite aplicações Java (ex.: Render, Railway, AWS, Azure),
  * coloque a URL pública dele aqui. A Vercel hospeda o FRONT-END; o
